@@ -7,5 +7,5 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface DipendentiRepository extends JpaRepository<Dipendente, UUID> {
-    Optional<Object> findByEmail(String email);
+    Optional<Dipendente> findByEmail(String email);
 }

@@ -1,11 +1,21 @@
 package liliyasavitska.gestioneviaggi.exeptions;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import lombok.Getter;
+import org.springframework.validation.ObjectError;
 
-@ResponseStatus(HttpStatus.BAD_REQUEST)
+import java.util.List;
+
+@Getter
 public class BadRequestException extends RuntimeException {
+    private List<ObjectError> errorsList;
+
     public BadRequestException(String message) {
         super(message);
     }
+
+    public BadRequestException(List<ObjectError> errorsList) {
+        super("Errori nel body");
+        this.errorsList = errorsList;
+    }
+
 }

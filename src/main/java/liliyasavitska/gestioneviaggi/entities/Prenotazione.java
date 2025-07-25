@@ -22,4 +22,14 @@ public class Prenotazione {
     private Dipendente dipendente;
     @ManyToOne
     private Viaggio viaggio;
+
+    public Prenotazione(Dipendente dipendente, Viaggio viaggio, String note, LocalDate dataRichiesta, UUID id) {
+        this.dipendente = dipendente;
+        this.viaggio = viaggio;
+        this.note = note;
+        this.dataRichiesta = dataRichiesta;
+        this.id = id;
+    }
+
+
 }
